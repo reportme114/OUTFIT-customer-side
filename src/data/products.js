@@ -35,6 +35,8 @@ const watchImg3 = 'https://cdn.builder.io/api/v1/image/assets%2Fd804a884d1294eac
 const shoeImg1 = 'https://cdn.builder.io/api/v1/image/assets%2Fd804a884d1294eac9363b52e819be07b%2Fffd3ab09a2d545bbb961ba9e5f854920?format=webp&width=800&height=1200'
 const shoeImg2 = 'https://cdn.builder.io/api/v1/image/assets%2Fd804a884d1294eac9363b52e819be07b%2Fbaf524073afd4ff58f2a2760bbdde679?format=webp&width=800&height=1200'
 const shoeImg3 = 'https://cdn.builder.io/api/v1/image/assets%2Fd804a884d1294eac9363b52e819be07b%2F90557b2b573f473e8f04514cb815763f?format=webp&width=800&height=1200'
+const pantsImg1 = 'https://cdn.builder.io/api/v1/image/assets%2Fd804a884d1294eac9363b52e819be07b%2F13d3b6ff527947a397b4b03a3790e6ed?format=webp&width=800&height=1200'
+const pantsImg2 = 'https://cdn.builder.io/api/v1/image/assets%2Fd804a884d1294eac9363b52e819be07b%2F20f56da543f24224bc0660e47ecd1f77?format=webp&width=800&height=1200'
 
 export const PRODUCTS = [
   {...mk(1, 'Classic Leather Oxford', 'OUTFIT', 'shoes', 4500, 6000, 4.8, ['Black', 'Brown'], Sshoe, 'Formal', 'men'), image: shoeImg1, gallery: [shoeImg1, shoeImg1, shoeImg1, shoeImg1]},
@@ -45,8 +47,8 @@ export const PRODUCTS = [
   {...mk(6, 'Classic Leather Watch', 'OUTFIT', 'watches', 3999, 6500, 4.7, ['Brown', 'Black'], ['One Size'], 'Classic', 'unisex'), image: watchImg3, gallery: [watchImg3, watchImg3, watchImg3, watchImg3]},
   {...mk(7, 'Premium Cotton Shirt', 'OUTFIT', 'shirts', 1899, 3000, 4.7, C, Sapp, 'Basics', 'men'), image: shirtsImg, gallery: [shirtsImg, shirtsImg, shirtsImg, shirtsImg]},
   {...mk(8, 'Oxford Button-Down', 'OUTFIT', 'shirts', 2499, 4000, 4.8, C, Sapp, 'Formal', 'men'), image: shirtsImg, gallery: [shirtsImg, shirtsImg, shirtsImg, shirtsImg]},
-  mk(9, 'Slim Fit Chinos', 'OUTFIT', 'pants', 2299, 3500, 4.6, ['Black', 'Beige', 'Navy'], Sapp, 'Casual', 'men'),
-  mk(10, 'Classic Denim Jeans', 'OUTFIT', 'pants', 2899, 4500, 4.7, ['Black', 'Blue'], Sapp, 'Casual', 'men'),
+  {...mk(9, 'Slim Fit Chinos', 'OUTFIT', 'pants', 2299, 3500, 4.6, ['Black', 'Beige', 'Navy'], Sapp, 'Casual', 'men'), image: pantsImg1, gallery: [pantsImg1, pantsImg1, pantsImg1, pantsImg1]},
+  {...mk(10, 'Classic Denim Jeans', 'OUTFIT', 'pants', 2899, 4500, 4.7, ['Black', 'Blue'], Sapp, 'Casual', 'men'), image: pantsImg2, gallery: [pantsImg2, pantsImg2, pantsImg2, pantsImg2]},
   {...mk(11, 'Elegant Midi Dress', 'OUTFIT', 'dresses', 3899, 6000, 4.9, ['Black', 'Navy', 'Beige'], Sapp, 'Formal', 'women'), image: dressImg1, gallery: [dressImg1, dressImg1, dressImg1, dressImg1]},
   {...mk(12, 'Casual Linen Dress', 'OUTFIT', 'dresses', 2699, 4200, 4.7, ['White', 'Beige', 'Olive'], Sapp, 'Casual', 'women'), image: dressImg2, gallery: [dressImg2, dressImg2, dressImg2, dressImg2]},
 ]
