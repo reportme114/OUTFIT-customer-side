@@ -6,6 +6,7 @@
 
 .about-hero__content {
   max-width: 600px;
+  margin: 0 auto;
 }
 
 .about-hero h1 {
