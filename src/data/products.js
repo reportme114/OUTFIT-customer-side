@@ -2,11 +2,11 @@
 const img = (seed) => `https://picsum.photos/seed/${seed}/800/1000`
 
 export const CATEGORIES = [
-  { slug: 'shirts', label: "Men's Shirts", cover: img('outfit-shirts') },
-  { slug: 'pants', label: "Men's Pants", cover: img('outfit-pants') },
-  { slug: 'dresses', label: "Women's Dresses", cover: img('outfit-dresses') },
-  { slug: 'shoes', label: 'Shoes', cover: img('outfit-shoes') },
-  { slug: 'watches', label: 'Watches', cover: img('outfit-watches') },
+  { slug: 'shirts', label: "Men's Shirts", cover: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&h=1000&fit=crop' },
+  { slug: 'pants', label: "Men's Pants", cover: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=800&h=1000&fit=crop' },
+  { slug: 'dresses', label: "Women's Dresses", cover: 'https://images.unsplash.com/photo-1595777707802-f3ee0865ba9d?w=800&h=1000&fit=crop' },
+  { slug: 'shoes', label: 'Shoes', cover: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=1000&fit=crop' },
+  { slug: 'watches', label: 'Watches', cover: 'https://images.unsplash.com/photo-1523170335684-f042f1b5eca7?w=800&h=1000&fit=crop' },
 ]
 
 const mk = (id, name, brand, category, price, original, rating, colors, sizes, collection) => ({
