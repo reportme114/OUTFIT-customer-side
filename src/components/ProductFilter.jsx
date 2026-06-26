@@ -6,7 +6,6 @@ export default function ProductFilter({ products, onFilter }) {
   const [expanded, setExpanded] = useState({ gender: true, price: false, size: false, color: false })
   const [filters, setFilters] = useState({ gender: [], price: [0, 20000], size: [], color: [] })
 
-  const genders = ['Men', 'Women']
   const priceRanges = [
     { label: 'Under ₹2,000', min: 0, max: 2000 },
     { label: '₹2,000 - ₹5,000', min: 2000, max: 5000 },
@@ -15,15 +14,6 @@ export default function ProductFilter({ products, onFilter }) {
   ]
   const allSizes = ['S', 'M', 'L', 'XL', '7', '8', '9', '10', '11']
   const allColors = ['Black', 'White', 'Beige', 'Navy', 'Olive', 'Brown', 'Silver', 'Gold']
-
-  const handleGenderChange = (gender) => {
-    const newGenders = filters.gender.includes(gender)
-      ? filters.gender.filter(g => g !== gender)
-      : [...filters.gender, gender]
-    const updated = { ...filters, gender: newGenders }
-    setFilters(updated)
-    applyFilters(updated)
-  }
 
   const handleSizeChange = (size) => {
     const newSizes = filters.size.includes(size)
@@ -51,14 +41,6 @@ export default function ProductFilter({ products, onFilter }) {
 
   const applyFilters = (activeFilters) => {
     const filtered = products.filter(p => {
-      // Gender filter
-      if (activeFilters.gender.length > 0) {
-        const productGender = getProductGender(p)
-        if (!activeFilters.gender.includes(productGender) && !activeFilters.gender.includes('Unisex')) {
-          return false
-        }
-      }
-
       // Price filter
       if (p.price < activeFilters.price[0] || p.price > activeFilters.price[1]) {
         return false
@@ -82,18 +64,11 @@ export default function ProductFilter({ products, onFilter }) {
     onFilter(filtered)
   }
 
-  const getProductGender = (product) => {
-    if (product.category === 'dresses') return 'Women'
-    if (product.name?.toLowerCase().includes("women's")) return 'Women'
-    if (product.name?.toLowerCase().includes("men's")) return 'Men'
-    return 'Unisex'
-  }
-
   const toggleExpand = (section) => {
     setExpanded(prev => ({ ...prev, [section]: !prev[section] }))
   }
 
-  const activeCount = filters.gender.length + filters.size.length + filters.color.length + (filters.price[0] > 0 || filters.price[1] < 20000 ? 1 : 0)
+  const activeCount = filters.size.length + filters.color.length + (filters.price[0] > 0 || filters.price[1] < 20000 ? 1 : 0)
 
   return (
     <div className="product-filter">
@@ -109,28 +84,6 @@ export default function ProductFilter({ products, onFilter }) {
           >
             Clear ({activeCount})
           </button>
-        )}
-      </div>
-
-      {/* Gender Filter */}
-      <div className="filter-section">
-        <button className="filter-toggle" onClick={() => toggleExpand('gender')}>
-          <span>Gender</span>
-          <ChevronDown size={16} className={expanded.gender ? 'expanded' : ''} />
-        </button>
-        {expanded.gender && (
-          <div className="filter-options">
-            {genders.map(gender => (
-              <label key={gender} className="filter-checkbox">
-                <input
-                  type="checkbox"
-                  checked={filters.gender.includes(gender)}
-                  onChange={() => handleGenderChange(gender)}
-                />
-                <span>{gender}</span>
-              </label>
-            ))}
-          </div>
         )}
       </div>
 

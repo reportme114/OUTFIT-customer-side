@@ -3,7 +3,6 @@ import { X } from 'lucide-react'
 import './filter-modal.css'
 
 export default function FilterModal({ isOpen, onClose, products, onFilter }) {
-  const [gender, setGender] = useState([])
   const [priceRange, setPriceRange] = useState([0, 20000])
 
   const priceRanges = [
@@ -13,32 +12,13 @@ export default function FilterModal({ isOpen, onClose, products, onFilter }) {
     { label: '₹10,000+', min: 10000, max: 50000 },
   ]
 
-  const getProductGender = (product) => {
-    if (product.category === 'dresses') return 'Women'
-    if (product.name?.toLowerCase().includes("women's")) return 'Women'
-    if (product.name?.toLowerCase().includes("men's")) return 'Men'
-    return 'Unisex'
-  }
-
-  const handleGenderChange = (g) => {
-    const updated = gender.includes(g) ? gender.filter(x => x !== g) : [...gender, g]
-    setGender(updated)
-    applyFilters(updated, priceRange)
-  }
-
   const handlePriceChange = (min, max) => {
     setPriceRange([min, max])
-    applyFilters(gender, [min, max])
+    applyFilters([min, max])
   }
 
-  const applyFilters = (genderFilters, price) => {
+  const applyFilters = (price) => {
     const filtered = products.filter(p => {
-      if (genderFilters.length > 0) {
-        const pGender = getProductGender(p)
-        if (!genderFilters.includes(pGender) && !genderFilters.includes('Unisex')) {
-          return false
-        }
-      }
       if (p.price < price[0] || p.price > price[1]) return false
       return true
     })
@@ -46,7 +26,6 @@ export default function FilterModal({ isOpen, onClose, products, onFilter }) {
   }
 
   const clearFilters = () => {
-    setGender([])
     setPriceRange([0, 20000])
     onFilter(products)
   }
@@ -63,23 +42,6 @@ export default function FilterModal({ isOpen, onClose, products, onFilter }) {
         </div>
 
         <div className="filter-modal-content">
-          {/* Gender Filter */}
-          <div className="filter-group">
-            <h3>Gender</h3>
-            <div className="filter-options">
-              {['Men', 'Women'].map(g => (
-                <label key={g} className="filter-option">
-                  <input
-                    type="checkbox"
-                    checked={gender.includes(g)}
-                    onChange={() => handleGenderChange(g)}
-                  />
-                  <span>{g}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-
           {/* Price Filter */}
           <div className="filter-group">
             <h3>Price</h3>
@@ -100,7 +62,7 @@ export default function FilterModal({ isOpen, onClose, products, onFilter }) {
         </div>
 
         <div className="filter-modal-footer">
-          {(gender.length > 0 || (priceRange[0] > 0 || priceRange[1] < 20000)) && (
+          {(priceRange[0] > 0 || priceRange[1] < 20000) && (
             <button className="btn-secondary" onClick={clearFilters}>Clear Filters</button>
           )}
         </div>
