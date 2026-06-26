@@ -12,7 +12,13 @@ export default function Toast() {
           <div className="toast-content">
             <p>{toast.message}</p>
             {toast.action && (
-              <button className="toast-action" onClick={toast.action.onClick}>
+              <button
+                className="toast-action"
+                onClick={() => {
+                  toast.action.onClick?.()
+                  removeToast(toast.id)
+                }}
+              >
                 {toast.action.label}
               </button>
             )}
