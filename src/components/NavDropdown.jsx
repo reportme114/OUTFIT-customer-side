@@ -16,6 +16,14 @@ export default function NavDropdown() {
     ],
   }
 
+  const toggleMenu = (menu) => {
+    setOpenMenu(openMenu === menu ? null : menu)
+  }
+
+  const handleClickOutside = () => {
+    setOpenMenu(null)
+  }
+
   return (
     <>
       {/* Men Dropdown */}
@@ -24,7 +32,10 @@ export default function NavDropdown() {
         onMouseEnter={() => setOpenMenu('men')}
         onMouseLeave={() => setOpenMenu(null)}
       >
-        <button className="nav-dropdown-trigger">
+        <button
+          className="nav-dropdown-trigger"
+          onClick={() => toggleMenu('men')}
+        >
           Men
           <ChevronDown size={16} className={openMenu === 'men' ? 'expanded' : ''} />
         </button>
@@ -50,7 +61,10 @@ export default function NavDropdown() {
         onMouseEnter={() => setOpenMenu('women')}
         onMouseLeave={() => setOpenMenu(null)}
       >
-        <button className="nav-dropdown-trigger">
+        <button
+          className="nav-dropdown-trigger"
+          onClick={() => toggleMenu('women')}
+        >
           Women
           <ChevronDown size={16} className={openMenu === 'women' ? 'expanded' : ''} />
         </button>
@@ -69,6 +83,8 @@ export default function NavDropdown() {
           </div>
         )}
       </div>
+
+      {openMenu && <div className="nav-dropdown-overlay" onClick={handleClickOutside} />}
     </>
   )
 }
