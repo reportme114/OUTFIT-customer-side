@@ -72,20 +72,6 @@ export default function Home() {
         ))}
       </div></section>
 
-      {/* REVIEWS */}
-      <section className="section container">
-        <Reveal><div className="section__head"><span className="eyebrow">Loved by thousands</span><h2>Customer Reviews</h2></div></Reveal>
-        <div className="grid grid--4">
-          {REVIEWS.map((r,i)=>(
-            <Reveal key={i} delay={i*.05}><div className="review">
-              <Rating value={r.rating} />
-              <p>"{r.text}"</p>
-              <div className="review__by"><img src={r.photo} alt={r.name} loading="lazy" /><span>{r.name}</span></div>
-            </div></Reveal>
-          ))}
-        </div>
-      </section>
-
       <QuickView product={qv} onClose={()=>setQv(null)} />
     </motion.div>
   )
