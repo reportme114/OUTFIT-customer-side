@@ -6,11 +6,19 @@ import ProductCard from '../components/ProductCard.jsx'
 import './category.css'
 
 const MEN_SUBCATEGORIES = [
-  { label: 'Casual wears', slug: 'mens-casual' },
-  { label: 'Formals wears', slug: 'mens-formals' },
-  { label: 'Party wears', slug: 'mens-party' },
-  { label: 'Street wears', slug: 'mens-street' },
-  { label: 'Traditional wears', slug: 'mens-traditional' },
+  { label: 'Casual wears', slug: 'mens-casual', image: 'https://images.unsplash.com/photo-1490185160400-75e656de9742?w=600&h=800&fit=crop' },
+  { label: 'Formals wears', slug: 'mens-formals', image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&h=800&fit=crop' },
+  { label: 'Party wears', slug: 'mens-party', image: 'https://images.unsplash.com/photo-1539533057440-7814a9755706?w=600&h=800&fit=crop' },
+  { label: 'Street wears', slug: 'mens-street', image: 'https://images.unsplash.com/photo-1529886407128-c65c84de1fb4?w=600&h=800&fit=crop' },
+  { label: 'Traditional wears', slug: 'mens-traditional', image: 'https://images.unsplash.com/photo-1591209240644-b57fa99d6daa?w=600&h=800&fit=crop' },
+]
+
+const WOMEN_SUBCATEGORIES = [
+  { label: 'Tops, jeans', slug: 'womens-tops', image: 'https://images.unsplash.com/photo-1551551234-5fd63aaf93fe?w=600&h=800&fit=crop' },
+  { label: 'Kurta and kurta sets', slug: 'womens-kurta', image: 'https://images.unsplash.com/photo-1610271340738-b049cd451cb5?w=600&h=800&fit=crop' },
+  { label: 'Dresses and jumpsuits', slug: 'womens-dresses', image: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&h=800&fit=crop' },
+  { label: 'Party wears', slug: 'womens-party', image: 'https://images.unsplash.com/photo-1595777712802-4b03f4b85b8a?w=600&h=800&fit=crop' },
+  { label: 'Active wear', slug: 'womens-active', image: 'https://images.unsplash.com/photo-1535394965917-3c7b1c7d9c7d?w=600&h=800&fit=crop' },
 ]
 
 export default function Category() {
@@ -32,6 +40,7 @@ export default function Category() {
 
   const showFilters = slug === 'shoes' || slug === 'watches'
   const showMenSubcategories = slug === 'shirts'
+  const showWomenSubcategories = slug === 'women-dresses'
 
   return (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:.4}}>
@@ -42,9 +51,20 @@ export default function Category() {
           <div className="cat-grid">
             {MEN_SUBCATEGORIES.map((cat) => (
               <Link key={cat.slug} to={`/category/${cat.slug}`} className="cat-card">
-                <div style={{backgroundColor:'#E8DDD5',width:'100%',height:'100%',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <span style={{fontSize:'18px',fontWeight:'600',color:'var(--ink)',textAlign:'center'}}>{cat.label}</span>
-                </div>
+                <img src={cat.image} alt={cat.label} />
+                <div className="cat-card__veil"></div>
+                <div className="cat-card__label">{cat.label}</div>
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {showWomenSubcategories && (
+          <div className="cat-grid">
+            {WOMEN_SUBCATEGORIES.map((cat) => (
+              <Link key={cat.slug} to={`/category/${cat.slug}`} className="cat-card">
+                <img src={cat.image} alt={cat.label} />
+                <div className="cat-card__veil"></div>
                 <div className="cat-card__label">{cat.label}</div>
               </Link>
             ))}
@@ -87,14 +107,12 @@ export default function Category() {
           </div>
         )}
 
-        {filteredProducts.length > 0 ? (
+        {filteredProducts.length > 0 && (
           <div className="pcard-grid">
             {filteredProducts.map(p => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
-        ) : (
-          <p className="no-products">No products available. Check back soon!</p>
         )}
       </section>
     </motion.div>

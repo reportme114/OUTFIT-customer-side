@@ -19,7 +19,7 @@
 .cat-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
 .cat-card:hover img{transform:scale(1.07)}
 .cat-card__veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,10,10,.5));transition:opacity .4s}
-.cat-card__label{position:absolute;left:16px;bottom:16px;color:#fff;font-family:var(--font-head);font-weight:600;font-size:16px;transition:transform .4s var(--ease)}
+.cat-card__label{position:absolute;left:16px;bottom:16px;color:#F5F1ED;font-family:var(--font-head);font-weight:600;font-size:16px;transition:transform .4s var(--ease)}
 .cat-card:hover .cat-card__label{transform:translateY(-4px)}
 @media(max-width:980px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:560px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
