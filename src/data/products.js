@@ -45,8 +45,6 @@ export const PRODUCTS = [
   {...mk(4, 'Elegant Analog Watch', 'OUTFIT', 'watches', 8999, 12000, 4.9, ['Black', 'Silver'], ['One Size'], 'Luxury', 'men'), image: watchImg1, gallery: [watchImg1, watchImg1, watchImg1, watchImg1]},
   {...mk(5, 'Minimalist Steel Watch', 'OUTFIT', 'watches', 5499, 8000, 4.8, ['Silver'], ['One Size'], 'Modern', 'women'), image: watchImg2, gallery: [watchImg2, watchImg2, watchImg2, watchImg2]},
   {...mk(6, 'Classic Leather Watch', 'OUTFIT', 'watches', 3999, 6500, 4.7, ['Brown', 'Black'], ['One Size'], 'Classic', 'unisex'), image: watchImg3, gallery: [watchImg3, watchImg3, watchImg3, watchImg3]},
-  {...mk(7, 'Premium Cotton Shirt', 'OUTFIT', 'shirts', 1899, 3000, 4.7, C, Sapp, 'Basics', 'men'), image: shirtsImg, gallery: [shirtsImg, shirtsImg, shirtsImg, shirtsImg]},
-  {...mk(8, 'Oxford Button-Down', 'OUTFIT', 'shirts', 2499, 4000, 4.8, C, Sapp, 'Formal', 'men'), image: shirtsImg, gallery: [shirtsImg, shirtsImg, shirtsImg, shirtsImg]},
   {...mk(9, 'Slim Fit Chinos', 'OUTFIT', 'pants', 2299, 3500, 4.6, ['Black', 'Beige', 'Navy'], Sapp, 'Casual', 'men'), image: pantsImg1, gallery: [pantsImg1, pantsImg1, pantsImg1, pantsImg1]},
   {...mk(10, 'Classic Denim Jeans', 'OUTFIT', 'pants', 2899, 4500, 4.7, ['Black', 'Blue'], Sapp, 'Casual', 'men'), image: pantsImg2, gallery: [pantsImg2, pantsImg2, pantsImg2, pantsImg2]},
   {...mk(11, 'Elegant Midi Dress', 'OUTFIT', 'dresses', 3899, 6000, 4.9, ['Black', 'Navy', 'Beige'], Sapp, 'Formal', 'women'), image: dressImg1, gallery: [dressImg1, dressImg1, dressImg1, dressImg1]},

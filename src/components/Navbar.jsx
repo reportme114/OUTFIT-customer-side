@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, Heart, User, ShoppingBag, Menu, X } from 'lucide-react'
+import { Search, Heart, User, ShoppingBag, Menu, X, ChevronDown } from 'lucide-react'
 import { useCart } from '../context/CartContext.jsx'
 import { useWishlist } from '../context/WishlistContext.jsx'
-import NavDropdown from './NavDropdown.jsx'
 import './navbar.css'
 
 const LINKS = [
   { to:'/', label:'Home' },
-  { to:'/category/shoes', label:'Shoes' },
-  { to:'/category/watches', label:'Watches' },
+  { to:'/category/shirts', label:'Men' },
+  { to:'/category/women-dresses', label:'Women' },
+  { to:'/category/accessories', label:'Accessories' },
   { to:'/category/dresses', label:'Sale' },
   { to:'/about', label:'About' },
 ]
@@ -49,7 +49,6 @@ export default function Navbar() {
 
         <nav className="nav__links" aria-label="Primary">
           <NavLink to="/" className={({isActive})=>'nav__link'+(isActive?' is-active':'')}>Home</NavLink>
-          <NavDropdown />
           {LINKS.slice(1).map((l,i)=>(
             <NavLink key={i} to={l.to} className={({isActive})=>'nav__link'+(isActive?' is-active':'')}>{l.label}</NavLink>
           ))}
