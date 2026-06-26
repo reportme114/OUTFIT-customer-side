@@ -67,7 +67,6 @@ export default function Home() {
                   <span className="new-featured__tag">Just In</span>
                   <h3>{newArrivals[0].name}</h3>
                   <p>{newArrivals[0].description}</p>
-                  <Link to={`/product/${newArrivals[0].id}`} className="btn">Explore</Link>
                 </div>
               </div>
             </Reveal>
