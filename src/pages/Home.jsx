@@ -58,34 +58,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHAT'S NEW */}
-      <section className="section container">
-        <Reveal><div className="section__head"><span className="eyebrow">Latest</span><h2>What's New</h2></div></Reveal>
-        <div className="whats-new">
-          <div className="whats-new__featured">
-            <Reveal>
-              <div className="new-featured">
-                <Link to={`/product/${newArrivals[0].id}`}>
-                  <motion.img src={newArrivals[0].image} alt={newArrivals[0].name}
-                    whileHover={{scale:1.08}} transition={{duration:.6,ease:[0.22,0.61,0.36,1]}} />
-                </Link>
-                <div className="new-featured__label">
-                  <span className="new-featured__tag">Just In</span>
-                  <h3>{newArrivals[0].name}</h3>
-                  <p>{newArrivals[0].description}</p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-          <div className="whats-new__grid">
-            {newArrivals.slice(1).map((product,i)=>(
-              <Reveal key={product.id} delay={i*.05}>
-                <ProductCard product={product} onQuickView={setQuickView} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* PROMO */}
       <section className="section"><div className="container promo">
