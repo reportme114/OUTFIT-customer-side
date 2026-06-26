@@ -8,7 +8,18 @@ export default function ProductFilter({ products, onFilter, showGenderFilter = f
 
   const genders = ['Men', 'Women']
   const allSizes = ['S', 'M', 'L', 'XL', '7', '8', '9', '10', '11']
-  const allColors = ['Black', 'White', 'Beige', 'Navy', 'Olive', 'Brown', 'Silver', 'Gold']
+  const allColors = [
+    'Black', 'White', 'Gray', 'Charcoal',
+    'Red', 'Crimson', 'Scarlet', 'Maroon',
+    'Pink', 'Rose', 'Salmon', 'Coral',
+    'Orange', 'Apricot', 'Peach', 'Tan',
+    'Yellow', 'Gold', 'Khaki', 'Beige',
+    'Green', 'Olive', 'Sage', 'Mint',
+    'Teal', 'Cyan', 'Navy', 'Blue',
+    'Purple', 'Indigo', 'Violet', 'Plum',
+    'Brown', 'Tan', 'Chocolate', 'Coffee',
+    'Silver', 'Ivory', 'Cream', 'Nude'
+  ]
 
   const handleSizeChange = (size) => {
     const newSizes = filters.size.includes(size)
@@ -222,15 +233,17 @@ export default function ProductFilter({ products, onFilter, showGenderFilter = f
           <ChevronDown size={16} className={expanded.color ? 'expanded' : ''} />
         </button>
         {expanded.color && (
-          <div className="filter-options">
+          <div className="color-grid">
             {allColors.map(color => (
-              <label key={color} className="filter-checkbox">
+              <label key={color} className="color-swatch">
                 <input
                   type="checkbox"
                   checked={filters.color.includes(color)}
                   onChange={() => handleColorChange(color)}
+                  className="color-input"
                 />
-                <span>{color}</span>
+                <div className="swatch" data-color={color.toLowerCase()} />
+                <span className="color-label">{color}</span>
               </label>
             ))}
           </div>
