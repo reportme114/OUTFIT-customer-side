@@ -6,11 +6,11 @@ import ProductCard from '../components/ProductCard.jsx'
 import './category.css'
 
 const MEN_SUBCATEGORIES = [
-  { label: 'Casual wears', slug: 'mens-casual' },
-  { label: 'Formals wears', slug: 'mens-formals' },
-  { label: 'Party wears', slug: 'mens-party' },
-  { label: 'Street wears', slug: 'mens-street' },
-  { label: 'Traditional wears', slug: 'mens-traditional' },
+  { label: 'Casual wears', slug: 'mens-casual', image: 'https://images.unsplash.com/photo-1552062407-c551eeda4bbb?w=500&h=667&fit=crop' },
+  { label: 'Formals wears', slug: 'mens-formals', image: 'https://images.unsplash.com/photo-1591047990852-a938e4e07efb?w=500&h=667&fit=crop' },
+  { label: 'Party wears', slug: 'mens-party', image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&h=667&fit=crop' },
+  { label: 'Street wears', slug: 'mens-street', image: 'https://images.unsplash.com/photo-1618898909619-85dba2d3c90e?w=500&h=667&fit=crop' },
+  { label: 'Traditional wears', slug: 'mens-traditional', image: 'https://images.unsplash.com/photo-1604080320529-c85e90c26f11?w=500&h=667&fit=crop' },
 ]
 
 export default function Category() {
@@ -42,9 +42,8 @@ export default function Category() {
           <div className="cat-grid">
             {MEN_SUBCATEGORIES.map((cat) => (
               <Link key={cat.slug} to={`/category/${cat.slug}`} className="cat-card">
-                <div style={{backgroundColor:'#E8DDD5',width:'100%',height:'100%',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <span style={{fontSize:'18px',fontWeight:'600',color:'var(--ink)',textAlign:'center'}}>{cat.label}</span>
-                </div>
+                <img src={cat.image} alt={cat.label} />
+                <div className="cat-card__veil"></div>
                 <div className="cat-card__label">{cat.label}</div>
               </Link>
             ))}
