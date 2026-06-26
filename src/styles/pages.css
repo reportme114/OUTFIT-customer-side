@@ -54,6 +54,8 @@
 .crumbs{font-size:13px;color:var(--muted)}
 .crumbs a:hover{color:var(--ink)}
 .cat-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;color:var(--muted);font-size:14px}
+.btn-filter{display:flex;align-items:center;gap:8px;padding:10px 16px;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);font-weight:600;font-size:14px;cursor:pointer;transition:all .2s;color:var(--ink)}
+.btn-filter:hover{background:var(--surface);border-color:var(--ink)}
 /* PDP */
 .pdp{display:grid;grid-template-columns:1.1fr 1fr;gap:48px}
 .pdp__main{aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
