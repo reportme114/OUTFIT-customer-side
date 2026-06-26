@@ -78,7 +78,7 @@ export default function About() {
           <motion.div className="contact-card" whileHover={{y:-4}} transition={{duration:.3}}>
             <div className="contact-card__icon"><Mail size={28}/></div>
             <h3>Email Us</h3>
-            <button className="contact-card__link" onClick={handleEmailClick} style={{background:'none', border:'none', padding:0, cursor:'pointer'}}>parthiravi20@gmail.com</button>
+            <button className="contact-card__link" onClick={handleEmailClick}>parthiravi20@gmail.com</button>
             <p>We respond within 24 hours</p>
           </motion.div>
         </div>

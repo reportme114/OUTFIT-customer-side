@@ -56,12 +56,13 @@
 }
 
 .contact-card__link {
-  display: block;
+  display: inline-block;
   font-weight: 600;
   color: var(--ink);
   margin-bottom: 6px;
   text-decoration: none;
   transition: color var(--dur);
+  cursor: pointer;
 }
 
 .contact-card__link:hover {
