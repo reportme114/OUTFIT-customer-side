@@ -6,7 +6,7 @@ export default function ProductFilter({ products, onFilter }) {
   const [expanded, setExpanded] = useState({ gender: true, price: false, size: false, color: false })
   const [filters, setFilters] = useState({ gender: [], price: [0, 20000], size: [], color: [] })
 
-  const genders = ['Men', 'Women', 'Unisex']
+  const genders = ['Men', 'Women']
   const priceRanges = [
     { label: 'Under ₹2,000', min: 0, max: 2000 },
     { label: '₹2,000 - ₹5,000', min: 2000, max: 5000 },

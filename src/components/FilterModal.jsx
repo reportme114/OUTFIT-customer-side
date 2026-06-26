@@ -67,7 +67,7 @@ export default function FilterModal({ isOpen, onClose, products, onFilter }) {
           <div className="filter-group">
             <h3>Gender</h3>
             <div className="filter-options">
-              {['Men', 'Women', 'Unisex'].map(g => (
+              {['Men', 'Women'].map(g => (
                 <label key={g} className="filter-option">
                   <input
                     type="checkbox"
