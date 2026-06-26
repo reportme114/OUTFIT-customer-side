@@ -1,18 +1,25 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, Heart, User, ShoppingBag, Menu, X } from 'lucide-react'
+import { Search, Heart, User, ShoppingBag, Menu, X, ChevronDown } from 'lucide-react'
 import { useCart } from '../context/CartContext.jsx'
 import { useWishlist } from '../context/WishlistContext.jsx'
 import './navbar.css'
 
 const LINKS = [
   { to:'/', label:'Home' },
-  { to:'/category/shirts', label:'Men' },
   { to:'/category/women-dresses', label:'Women' },
   { to:'/category/accessories', label:'Accessories' },
   { to:'/category/dresses', label:'Sale' },
   { to:'/about', label:'About' },
+]
+
+const MEN_SUBCATEGORIES = [
+  { label: 'Casual wears', to: '/category/mens-casual' },
+  { label: 'Formals wears', to: '/category/mens-formals' },
+  { label: 'Party wears', to: '/category/mens-party' },
+  { label: 'Street wears', to: '/category/mens-street' },
+  { label: 'Traditional wears', to: '/category/mens-traditional' },
 ]
 
 export default function Navbar() {
