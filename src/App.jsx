@@ -11,6 +11,7 @@ import { ToastProvider } from './context/ToastContext.jsx'
 import useLenis from './hooks/useLenis.js'
 
 const Home = lazy(() => import('./pages/Home.jsx'))
+const Search = lazy(() => import('./pages/Search.jsx'))
 const Category = lazy(() => import('./pages/Category.jsx'))
 const Product = lazy(() => import('./pages/Product.jsx'))
 const Checkout = lazy(() => import('./pages/Checkout.jsx'))
@@ -33,6 +34,7 @@ export default function App() {
               <AnimatePresence mode="wait">
                 <Routes location={location} key={location.pathname}>
                   <Route path="/" element={<Home />} />
+                  <Route path="/search" element={<Search />} />
                   <Route path="/category/:slug" element={<Category />} />
                   <Route path="/product/:id" element={<Product />} />
                   <Route path="/checkout" element={<Checkout />} />
