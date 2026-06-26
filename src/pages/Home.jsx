@@ -86,12 +86,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GALLERY */}
-      <section className="section container">
-        <Reveal><div className="section__head"><span className="eyebrow">@outfit</span><h2>Style Gallery</h2></div></Reveal>
-        <div className="gram">{GALLERY.map((g,i)=>(<Reveal key={i} delay={i*.04}><div className="gram__item"><img src={g} alt="" loading="lazy" /></div></Reveal>))}</div>
-      </section>
-
       <QuickView product={qv} onClose={()=>setQv(null)} />
     </motion.div>
   )
