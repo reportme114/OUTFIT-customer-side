@@ -9,8 +9,7 @@ import './navbar.css'
 
 const LINKS = [
   { to:'/', label:'Home' },
-  { to:'/category/shoes', label:'Shoes' },
-  { to:'/category/watches', label:'Watches' },
+  { to:'/category/accessories', label:'Accessories' },
   { to:'/category/dresses', label:'Sale' },
   { to:'/about', label:'About' },
 ]
