@@ -86,14 +86,12 @@ export default function Category() {
           </div>
         )}
 
-        {filteredProducts.length > 0 ? (
+        {filteredProducts.length > 0 && (
           <div className="pcard-grid">
             {filteredProducts.map(p => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
-        ) : (
-          <p className="no-products">No products available. Check back soon!</p>
         )}
       </section>
     </motion.div>
