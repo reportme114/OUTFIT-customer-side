@@ -2,11 +2,11 @@
 const img = (seed) => `https://picsum.photos/seed/${seed}/800/1000`
 
 export const CATEGORIES = [
-  { slug: 'shirts', label: "Men's Shirts", cover: img('outfit-shirts') },
-  { slug: 'pants', label: "Men's Pants", cover: img('outfit-pants') },
-  { slug: 'dresses', label: "Women's Dresses", cover: img('outfit-dresses') },
-  { slug: 'shoes', label: 'Shoes', cover: img('outfit-shoes') },
-  { slug: 'watches', label: 'Watches', cover: img('outfit-watches') },
+  { slug: 'shirts', label: "Men's Shirts", cover: img('outfit-shirts-hero') },
+  { slug: 'pants', label: "Men's Pants", cover: img('outfit-pants-hero') },
+  { slug: 'dresses', label: "Women's Dresses", cover: img('outfit-dresses-hero') },
+  { slug: 'shoes', label: 'Shoes', cover: img('outfit-shoes-hero') },
+  { slug: 'watches', label: 'Watches', cover: img('outfit-watches-hero') },
 ]
 
 const mk = (id, name, brand, category, price, original, rating, colors, sizes, collection) => ({
@@ -25,28 +25,7 @@ const C = ['Black','White','Beige','Navy','Olive']
 const Sapp = ['S','M','L','XL']
 const Sshoe = ['7','8','9','10','11']
 
-export const PRODUCTS = [
-  mk(1,'Tailored Oxford Shirt','Linea','shirts',2499,3299,4.6,C,Sapp,'New Arrivals'),
-  mk(2,'Linen Resort Shirt','Atlas','shirts',2199,2899,4.4,C,Sapp,'Trending Now'),
-  mk(3,'Brushed Flannel Shirt','Linea','shirts',2799,3599,4.7,C,Sapp,'Best Sellers'),
-  mk(4,'Slim Chino Trousers','Atlas','pants',2999,3799,4.5,C,Sapp,'Best Sellers'),
-  mk(5,'Pleated Wool Trousers','Maison','pants',3899,4999,4.8,C,Sapp,'Premium Collection'),
-  mk(6,'Tapered Denim','Atlas','pants',3299,3999,4.3,C,Sapp,'New Arrivals'),
-  mk(7,'Silk Slip Dress','Maison','dresses',4299,5499,4.9,C,Sapp,'Limited Edition'),
-  mk(8,'Linen Midi Dress','Atlas','dresses',3499,4299,4.5,C,Sapp,'Trending Now'),
-  mk(9,'Pleated Maxi Dress','Maison','dresses',4899,6299,4.8,C,Sapp,'Premium Collection'),
-  mk(10,'Leather Derby Shoes','Haltmann','shoes',5999,7499,4.7,['Black','Brown'],Sshoe,'Best Sellers'),
-  mk(11,'Minimal Sneakers','Atlas','shoes',4499,5499,4.6,['White','Black'],Sshoe,'New Arrivals'),
-  mk(12,'Suede Loafers','Maison','shoes',5499,6999,4.8,['Beige','Navy'],Sshoe,'Premium Collection'),
-  mk(13,'Automatic Steel Watch','Haltmann','watches',12999,15999,4.9,['Silver','Gold'],[],'Limited Edition'),
-  mk(14,'Minimalist Quartz Watch','Linea','watches',6999,8499,4.6,['Black','Silver'],[],'Trending Now'),
-  mk(15,'Chronograph Watch','Haltmann','watches',14999,18999,4.8,['Black','Silver'],[],'Premium Collection'),
-  mk(16,'Cuban Collar Shirt','Atlas','shirts',2399,2999,4.4,C,Sapp,'New Arrivals'),
-  mk(17,'Cropped Wide Trousers','Maison','pants',3599,4499,4.7,C,Sapp,'Trending Now'),
-  mk(18,'Wrap Mini Dress','Linea','dresses',3299,3999,4.5,C,Sapp,'Best Sellers'),
-  mk(19,'Canvas High-Tops','Atlas','shoes',3999,4999,4.3,['White','Black'],Sshoe,'New Arrivals'),
-  mk(20,'Skeleton Dial Watch','Haltmann','watches',16999,20999,4.9,['Gold','Silver'],[],'Limited Edition'),
-]
+export const PRODUCTS = []
 
 export const byCategory = (slug) => PRODUCTS.filter(p => p.category === slug)
 export const byCollection = (name) => PRODUCTS.filter(p => p.collection === name)
