@@ -225,6 +225,90 @@
   border-radius: 3px;
 }
 
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.color-swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.color-input {
+  display: none;
+}
+
+.swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 2px solid #ddd;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.color-input:checked ~ .swatch {
+  border-color: #000;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
+}
+
+.swatch[data-color="black"] {
+  background-color: #000;
+}
+
+.swatch[data-color="white"] {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.swatch[data-color="beige"] {
+  background-color: #f5f1e8;
+}
+
+.swatch[data-color="navy"] {
+  background-color: #001f3f;
+}
+
+.swatch[data-color="olive"] {
+  background-color: #6b7d6b;
+}
+
+.swatch[data-color="brown"] {
+  background-color: #8b7355;
+}
+
+.swatch[data-color="silver"] {
+  background-color: #c0c0c0;
+}
+
+.swatch[data-color="gold"] {
+  background-color: #daa520;
+}
+
+.color-label {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.color-input:checked ~ .color-label {
+  color: #000;
+  font-weight: 600;
+}
+
+.color-swatch:hover .color-label {
+  color: #000;
+}
+
 @media (max-width: 768px) {
   .product-filter {
     min-width: auto;
@@ -232,6 +316,10 @@
   }
 
   .filter-options.size-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .color-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }

@@ -222,15 +222,17 @@ export default function ProductFilter({ products, onFilter, showGenderFilter = f
           <ChevronDown size={16} className={expanded.color ? 'expanded' : ''} />
         </button>
         {expanded.color && (
-          <div className="filter-options">
+          <div className="color-grid">
             {allColors.map(color => (
-              <label key={color} className="filter-checkbox">
+              <label key={color} className="color-swatch">
                 <input
                   type="checkbox"
                   checked={filters.color.includes(color)}
                   onChange={() => handleColorChange(color)}
+                  className="color-input"
                 />
-                <span>{color}</span>
+                <div className="swatch" data-color={color.toLowerCase()} />
+                <span className="color-label">{color}</span>
               </label>
             ))}
           </div>
