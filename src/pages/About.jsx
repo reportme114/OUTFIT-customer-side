@@ -72,7 +72,7 @@ export default function About() {
           <motion.div className="contact-card" whileHover={{y:-4}} transition={{duration:.3}}>
             <div className="contact-card__icon"><Mail size={28}/></div>
             <h3>Email Us</h3>
-            <a href="mailto:info@outfit.com" className="contact-card__link">info@outfit.com</a>
+            <a href="mailto:parthiravi20@gmail.com" className="contact-card__link">parthiravi20@gmail.com</a>
             <p>We respond within 24 hours</p>
           </motion.div>
         </div>
