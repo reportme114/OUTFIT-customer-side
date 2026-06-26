@@ -10,6 +10,7 @@ const word = { hidden:{opacity:0,y:24}, show:{opacity:1,y:0,transition:{duration
 
 export default function Home() {
   const headline = ['Style','Beyond','Trends']
+  const displayCategories = CATEGORIES.filter(c => c.slug !== 'pants')
   return (
     <motion.div {...PageMotion}>
       {/* HERO */}
@@ -35,7 +36,7 @@ export default function Home() {
       <section className="section container">
         <Reveal><div className="section__head"><span className="eyebrow">Browse</span><h2>Shop by Category</h2></div></Reveal>
         <div className="cat-grid">
-          {CATEGORIES.map((c,i)=>(
+          {displayCategories.map((c,i)=>(
             <Reveal key={c.slug} delay={i*.05}>
               <Link to={`/category/${c.slug}`} className="cat-card">
                 <img src={c.cover} alt={c.label} loading="lazy" />
