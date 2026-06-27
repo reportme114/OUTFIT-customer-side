@@ -48,7 +48,7 @@
 .filter-option.is-active {
   background: var(--ink);
   border-color: var(--ink);
-  color: #fff;
+  color: F5F5DCf;
 }
 
 .pcard-grid {

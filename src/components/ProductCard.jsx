@@ -41,4 +41,4 @@ export default function ProductCard({ product, onQuickView }) {
     </motion.article>
   )
 }
-function swatch(c){const m={Black:'#0A0A0A',White:'#fff',Beige:'#D9CBB8',Navy:'#1E2A44',Olive:'#5C6B4C',Brown:'#6B4A2E',Silver:'#C7CDD1',Gold:'#C9A24B'};return m[c]||'#ddd'}
+function swatch(c){const m={Black:'#0A0A0A',White:'F5F5DCf',Beige:'#D9CBB8',Navy:'#1E2A44',Olive:'#5C6B4C',Brown:'#6B4A2E',Silver:'#C7CDD1',Gold:'#C9A24B'};return m[c]||'#ddd'}

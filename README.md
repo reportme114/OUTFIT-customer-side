@@ -12,4 +12,4 @@ npm run dev
 Build: \`npm run build\` · Preview: \`npm run preview\`
 
 ## Design tokens
-Pure white #FFFFFF bg · black #0A0A0A accent · Poppins headings + Inter body · 12–16px radius. See \`src/styles/tokens.css\`.
+Pure white F5F5DCFFFF bg · black #0A0A0A accent · Poppins headings + Inter body · 12–16px radius. See \`src/styles/tokens.css\`.

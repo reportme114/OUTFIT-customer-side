@@ -70,7 +70,7 @@ export default function Checkout() {
   }
   if(done) return (
     <div className="container section" style={{textAlign:'center',maxWidth:560}}>
-      <motion.div initial={{scale:0}} animate={{scale:1}} transition={{type:'spring',stiffness:200,damping:14}} style={{width:72,height:72,borderRadius:'50%',background:'var(--ink)',color:'#fff',display:'grid',placeItems:'center',margin:'0 auto 20px'}}><Check size={34}/></motion.div>
+      <motion.div initial={{scale:0}} animate={{scale:1}} transition={{type:'spring',stiffness:200,damping:14}} style={{width:72,height:72,borderRadius:'50%',background:'var(--ink)',color:'F5F5DCf',display:'grid',placeItems:'center',margin:'0 auto 20px'}}><Check size={34}/></motion.div>
       <h1>Order confirmed</h1><p style={{color:'var(--muted)'}}>Thank you for shopping with OUTFIT. A confirmation has been sent to your email.</p>
     </div>
   )

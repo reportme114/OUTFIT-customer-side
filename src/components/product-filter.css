@@ -260,26 +260,26 @@
 }
 
 .swatch[data-color="black"] { background-color: #000; }
-.swatch[data-color="white"] { background-color: #fff; border-color: #ccc; }
+.swatch[data-color="white"] { background-color: F5F5DCf; border-color: #ccc; }
 .swatch[data-color="gray"] { background-color: #808080; }
 .swatch[data-color="charcoal"] { background-color: #36454f; }
 
-.swatch[data-color="red"] { background-color: #ff0000; }
+.swatch[data-color="red"] { background-color: F5F5DC0000; }
 .swatch[data-color="crimson"] { background-color: #dc143c; }
-.swatch[data-color="scarlet"] { background-color: #ff2400; }
+.swatch[data-color="scarlet"] { background-color: F5F5DC2400; }
 .swatch[data-color="maroon"] { background-color: #800000; }
 
-.swatch[data-color="pink"] { background-color: #ffb6c1; }
-.swatch[data-color="rose"] { background-color: #ff007f; }
+.swatch[data-color="pink"] { background-color: F5F5DCb6c1; }
+.swatch[data-color="rose"] { background-color: F5F5DC007f; }
 .swatch[data-color="salmon"] { background-color: #fa8072; }
-.swatch[data-color="coral"] { background-color: #ff7f50; }
+.swatch[data-color="coral"] { background-color: F5F5DC7f50; }
 
-.swatch[data-color="orange"] { background-color: #ff8c00; }
+.swatch[data-color="orange"] { background-color: F5F5DC8c00; }
 .swatch[data-color="apricot"] { background-color: #fbaa34; }
-.swatch[data-color="peach"] { background-color: #ffcba4; }
+.swatch[data-color="peach"] { background-color: F5F5DCcba4; }
 .swatch[data-color="tan"] { background-color: #d2b48c; }
 
-.swatch[data-color="yellow"] { background-color: #ffff00; }
+.swatch[data-color="yellow"] { background-color: F5F5DCff00; }
 .swatch[data-color="gold"] { background-color: #daa520; }
 .swatch[data-color="khaki"] { background-color: #f0e68c; }
 .swatch[data-color="beige"] { background-color: #f5f1e8; }
@@ -304,8 +304,8 @@
 .swatch[data-color="coffee"] { background-color: #6f4e37; }
 
 .swatch[data-color="silver"] { background-color: #c0c0c0; }
-.swatch[data-color="ivory"] { background-color: #fffff0; border-color: #ccc; }
-.swatch[data-color="cream"] { background-color: #fffdd0; }
+.swatch[data-color="ivory"] { background-color: F5F5DCfff0; border-color: #ccc; }
+.swatch[data-color="cream"] { background-color: F5F5DCfdd0; }
 .swatch[data-color="nude"] { background-color: #e8bfaa; }
 
 .color-label {

@@ -15,7 +15,7 @@ export default function QuickView({ product, onClose }) {
           <motion.div role="dialog" aria-label={product.name}
             style={{position:'fixed',inset:0,zIndex:80,display:'grid',placeItems:'center',padding:24,pointerEvents:'none'}}>
             <motion.div initial={{opacity:0,scale:.96,y:16}} animate={{opacity:1,scale:1,y:0}} exit={{opacity:0,scale:.96,y:16}} transition={{duration:.3,ease:[0.22,0.61,0.36,1]}}
-              style={{pointerEvents:'auto',background:'#fff',borderRadius:'var(--r-lg)',maxWidth:760,width:'100%',display:'grid',gridTemplateColumns:'1fr 1fr',overflow:'hidden',boxShadow:'var(--shadow-lg)'}}>
+              style={{pointerEvents:'auto',background:'F5F5DCf',borderRadius:'var(--r-lg)',maxWidth:760,width:'100%',display:'grid',gridTemplateColumns:'1fr 1fr',overflow:'hidden',boxShadow:'var(--shadow-lg)'}}>
               <img src={product.image} alt={product.name} style={{width:'100%',height:'100%',objectFit:'cover',minHeight:360}} />
               <div style={{padding:28,display:'flex',flexDirection:'column',gap:12}}>
                 <div style={{display:'flex',justifyContent:'space-between'}}><span className="eyebrow">{product.brand}</span><button className="nav__icon" onClick={onClose} aria-label="Close"><X size={18}/></button></div>

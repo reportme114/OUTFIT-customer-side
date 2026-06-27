@@ -26,7 +26,7 @@ export default function Home() {
     <motion.div {...PageMotion}>
       {/* HERO */}
       <section className="hero">
-        <motion.img className="hero__bg" src="https://picsum.photos/seed/outfit-hero/1800/1100" alt="" loading="eager"
+        <motion.img className="hero__bg" src="https://plus.unsplash.com/premium_photo-1664202526559-e21e9c0fb46a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D" alt="" loading="eager"
           initial={{opacity:0,scale:1.06,y:-10}} animate={{opacity:1,scale:1,y:0}} transition={{duration:1.2,ease:[0.22,0.61,0.36,1]}} />
         <div className="hero__overlay" />
         <div className="container hero__content">
