@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Heart, ShoppingBag, Truck, ShieldCheck, RefreshCw, Minus, Plus } from 'lucide-react'
 import { getProduct, related } from '../data/products.js'
@@ -15,6 +15,7 @@ import { useToast } from '../context/ToastContext.jsx'
 export default function Product() {
   const { id } = useParams()
   const navigate = useNavigate()
+  const location = useLocation()
   const p = getProduct(id)
   const { addItem, setOpen } = useCart()
   const { has, toggle } = useWishlist()
@@ -27,19 +28,18 @@ export default function Product() {
   const [tab,setTab] = useState('desc')
 
   const handleBuyNow = () => {
-    if (!isLoggedIn) {
-      addToast('Please log in to continue', {
-        action: {
-          label: 'Sign In',
-          onClick: () => window.location.href = '/account'
-        },
-        duration: 0
-      })
-      return
-    }
-    addItem(p, { size, color, qty })
-    setOpen(true)
+  if (!isLoggedIn) {
+    navigate("/account", {
+      state: {
+        from: location.pathname,
+      },
+    });
+    return;
   }
+
+  addItem(p, { size, color, qty });
+  navigate("/checkout"); // or setOpen(true) if you don't have checkout
+}
   if(!p) return <div className="container section"><h2>Product not found</h2><Link className="btn" to="/">Back home</Link></div>
   const liked = has(p.id)
   return (
@@ -63,10 +63,48 @@ export default function Product() {
             <span className={'pdp__stock'+(p.stock<8?' is-low':'')}>{p.stock<8?`Only ${p.stock} left`:'In stock'}</span>
           </div>
           <div className="pdp__cta">
-            <button className="btn btn--block" onClick={()=>addItem(p,{size,color,qty})}><ShoppingBag size={16}/> Add to Cart</button>
-            <button className="btn btn--ghost" onClick={handleBuyNow}>Buy Now</button>
-            <button className={'pdp__wish'+(liked?' is-on':'')} aria-label="Wishlist" onClick={()=>toggle(p.id)}><Heart size={18} fill={liked?'#0A0A0A':'none'} /></button>
-          </div>
+  <button
+    className="btn btn--block"
+    onClick={() => {
+      if (!isLoggedIn) {
+        navigate("/account", {
+          state: {
+            from: location.pathname,
+          },
+        });
+        return;
+      }
+
+      addItem(p, { size, color, qty });
+    }}
+  >
+    <ShoppingBag size={16} />
+    Add to Cart
+  </button>
+
+  <button className="btn btn--ghost" onClick={handleBuyNow}>
+    Buy Now
+  </button>
+
+  <button
+    className={'pdp__wish' + (liked ? ' is-on' : '')}
+    aria-label="Wishlist"
+    onClick={() => {
+      if (!isLoggedIn) {
+        navigate("/account", {
+          state: {
+            from: location.pathname,
+          },
+        });
+        return;
+      }
+
+      toggle(p.id);
+    }}
+  >
+    <Heart size={18} fill={liked ? '#0A0A0A' : 'none'} />
+  </button>
+</div>
           <div className="pdp__assure">
             <span><Truck size={16}/> Est. delivery 2–4 days</span><span><RefreshCw size={16}/> 30-day returns</span><span><ShieldCheck size={16}/> Secure checkout</span>
           </div>
