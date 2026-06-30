@@ -60,16 +60,10 @@ export const PANTS_SUBCATEGORIES = {
 
 export const ACCESSORIES_SUBCATEGORIES = {
   watches: [
-    { slug: 'analog-watches', label: 'Analog Watches', cover: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&auto=format&fit=crop&q=60' },
-    { slug: 'digital-watches', label: 'Digital Watches', cover: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&auto=format&fit=crop&q=60' },
-    { slug: 'smart-watches', label: 'Smart Watches', cover: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&auto=format&fit=crop&q=60' },
-    { slug: 'luxury-watches', label: 'Luxury Watches', cover: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'watches', label: 'Watches', cover: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&auto=format&fit=crop&q=60' },
   ],
   chains: [
-    { slug: 'gold-chains', label: 'Gold Chains', cover: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&auto=format&fit=crop&q=60' },
-    { slug: 'silver-chains', label: 'Silver Chains', cover: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&auto=format&fit=crop&q=60' },
-    { slug: 'pendant-chains', label: 'Pendant Chains', cover: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&auto=format&fit=crop&q=60' },
-    { slug: 'stainless-steel-chains', label: 'Stainless Steel Chains', cover: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'chains', label: 'Chains', cover: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&auto=format&fit=crop&q=60' },
   ]
 }
 
