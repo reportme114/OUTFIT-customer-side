@@ -13,10 +13,7 @@ const LINKS = [
     { to:'/category/pants', label:'Pants' }
   ]},
   { to:'/category/women-dresses', label:'Women' },
-  { to:'/category/accessories', label:'Accessories', submenu: [
-    { to:'/category/accessories', label:'Watches' },
-    { to:'/category/chains', label:'Chains' }
-  ]},
+  { to:'/category/accessories', label:'Accessories' },
   { to:'/category/dresses', label:'New Arrivals' },
   { to:'/about', label:'About' },
 ]
