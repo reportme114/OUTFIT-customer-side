@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { CATEGORIES, byCategory } from '../data/products.js'
+import { CATEGORIES, byCategory, SHIRT_SUBCATEGORIES } from '../data/products.js'
 import ProductCard from '../components/ProductCard.jsx'
 import './category.css'
 
@@ -100,7 +100,37 @@ export default function Category() {
         </div>
       </div>
 
-      {products.length > 0 && (
+      {slug === 'shirts' && (
+        <div className="cat-subcategories">
+          <div className="container">
+            <div className="subcategory-section">
+              <h2 className="section-title">Shirts</h2>
+              <div className="subcategory-grid">
+                {SHIRT_SUBCATEGORIES.shirts.map(sub => (
+                  <Link key={sub.slug} to={`/products/shirts/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="subcategory-section">
+              <h2 className="section-title">T-Shirts</h2>
+              <div className="subcategory-grid">
+                {SHIRT_SUBCATEGORIES.tshirts.map(sub => (
+                  <Link key={sub.slug} to={`/products/shirts/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {products.length > 0 && slug !== 'shirts' && (
         <div className="cat-products">
           <div className="container">
             <div className="products-grid">

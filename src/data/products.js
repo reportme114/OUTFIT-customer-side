@@ -8,6 +8,30 @@ export const CATEGORIES = [
   { slug: 'Accesories', label: 'Accesories', cover: 'https://images.unsplash.com/photo-1620625515032-6ed0c1790c75?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D' },
 ]
 
+export const SHIRT_SUBCATEGORIES = {
+  shirts: [
+    { slug: 'executive-formal-shirts', label: 'Executive Formal Shirts', cover: 'https://images.unsplash.com/photo-1603251578711-07f1707ce338?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'smart-casual-shirts', label: 'Smart Casual Shirts', cover: 'https://images.unsplash.com/photo-1596631066410-fbf667266251?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'classic-check-shirts', label: 'Classic Check Shirts', cover: 'https://images.unsplash.com/photo-1598033129519-c90900bc9de1?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'premium-denim-shirts', label: 'Premium Denim Shirts', cover: 'https://images.unsplash.com/photo-1618886614638-80e3c103d31a?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'signature-printed-shirts', label: 'Signature Printed Shirts', cover: 'https://images.unsplash.com/photo-1606155692474-3055e5a15636?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'luxury-corduroy-shirts', label: 'Luxury Corduroy Shirts', cover: 'https://images.unsplash.com/photo-1617114919297-3c8ddb01f790?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'imported-premium-shirts', label: 'Imported Premium Shirts', cover: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'pure-linen-shirts', label: 'Pure Linen Shirts', cover: 'https://images.unsplash.com/photo-1602033473980-2b64b719a45b?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'party-wear-shirts', label: 'Party Wear Shirts', cover: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'office-wear-shirts', label: 'Office Wear Shirts', cover: 'https://images.unsplash.com/photo-1596215565297-2af6e5e1eb3b?w=600&auto=format&fit=crop&q=60' },
+  ],
+  tshirts: [
+    { slug: 'polo-half-sleeve', label: 'Polo T-Shirts (Half Sleeve)', cover: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'polo-full-sleeve', label: 'Polo T-Shirts (Full Sleeve)', cover: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'oversized-drop-shoulder', label: 'Oversized Drop Shoulder T-Shirts', cover: 'https://images.unsplash.com/photo-1617638924702-92d37f439220?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'half-sleeve-tshirts', label: 'Half Sleeve T-Shirts', cover: 'https://images.unsplash.com/photo-1502716216588-48f0062cd553?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'full-sleeve-tshirts', label: 'Full Sleeve T-Shirts', cover: 'https://images.unsplash.com/photo-1503342394128-c894fdbb1d4e?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'graphic-printed-tshirts', label: 'Graphic Printed T-Shirts', cover: 'https://images.unsplash.com/photo-1614008375890-cb53b6c5f8d5?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'performance-dryfit', label: 'Performance Dry-Fit T-Shirts', cover: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop&q=60' },
+  ]
+}
+
 const mk = (id, name, brand, category, price, original, rating, colors, sizes, collection, gender = 'unisex') => ({
   id, name, brand, category, price, original, rating, gender,
   reviews: 20 + (id * 7) % 180,
