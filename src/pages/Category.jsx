@@ -98,56 +98,6 @@ export default function Category() {
         </div>
       </div>
 
-      <section className="section container">
-
-        {showMenSubcategories && (
-          <div className="cat-grid">
-            {MEN_SUBCATEGORIES.map(cat => (
-  <Link
-    key={cat.slug}
-    to={`/products/${encodeURIComponent("Men")}/${encodeURIComponent(cat.label)}`}
-    className="cat-card"
-  >
-                <img src={cat.image} alt={cat.label} />
-                <div className="cat-card__veil"></div>
-                <div className="cat-card__label">{cat.label}</div>
-              </Link>
-            ))}
-          </div>
-        )}
-
-        {showWomenSubcategories && (
-          <div className="cat-grid">
-            {WOMEN_SUBCATEGORIES.map(cat => (
-              <Link
-  key={cat.slug}
-  to={`/products/${encodeURIComponent("Women")}/${encodeURIComponent(cat.label)}`}
-  className="cat-card"
->
-                <img src={cat.image} alt={cat.label} />
-                <div className="cat-card__veil"></div>
-                <div className="cat-card__label">{cat.label}</div>
-              </Link>
-            ))}
-          </div>
-        )}
-
-        {showAccessoriesSubcategories && (
-          <div className="cat-grid">
-            {ACCESSORIES_SUBCATEGORIES.map(cat => (
-             <Link
-  key={cat.slug}
-  to={`/products/${encodeURIComponent("Accessories")}/${encodeURIComponent(cat.label)}`}
-  className="cat-card"
->
-                <img src={cat.image} alt={cat.label} />
-                <div className="cat-card__veil"></div>
-                <div className="cat-card__label">{cat.label}</div>
-              </Link>
-            ))}
-          </div>
-        )}
-      </section>
     </motion.div>
   )
 }
