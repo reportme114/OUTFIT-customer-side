@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { CATEGORIES, byCategory, SHIRT_SUBCATEGORIES } from '../data/products.js'
+import { CATEGORIES, byCategory, SHIRT_SUBCATEGORIES, PANTS_SUBCATEGORIES } from '../data/products.js'
 import ProductCard from '../components/ProductCard.jsx'
 import './category.css'
 
@@ -120,6 +120,60 @@ export default function Category() {
               <div className="subcategory-grid">
                 {SHIRT_SUBCATEGORIES.tshirts.map(sub => (
                   <Link key={sub.slug} to={`/products/shirts/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {slug === 'pants' && (
+        <div className="cat-subcategories">
+          <div className="container">
+            <div className="subcategory-section">
+              <h2 className="section-title">👖 Jeans Collection</h2>
+              <div className="subcategory-grid">
+                {PANTS_SUBCATEGORIES.jeans.map(sub => (
+                  <Link key={sub.slug} to={`/products/pants/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="subcategory-section">
+              <h2 className="section-title">👖 Pants Collection</h2>
+              <div className="subcategory-grid">
+                {PANTS_SUBCATEGORIES.pants.map(sub => (
+                  <Link key={sub.slug} to={`/products/pants/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="subcategory-section">
+              <h2 className="section-title">👔 Trousers Collection</h2>
+              <div className="subcategory-grid">
+                {PANTS_SUBCATEGORIES.trousers.map(sub => (
+                  <Link key={sub.slug} to={`/products/pants/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="subcategory-section">
+              <h2 className="section-title">🩳 Shorts Collection</h2>
+              <div className="subcategory-grid">
+                {PANTS_SUBCATEGORIES.shorts.map(sub => (
+                  <Link key={sub.slug} to={`/products/pants/${sub.slug}`} className="subcategory-card">
                     <img src={sub.cover} alt={sub.label} className="subcategory-image" />
                     <h3 className="subcategory-label">{sub.label}</h3>
                   </Link>

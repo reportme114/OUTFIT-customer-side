@@ -32,6 +32,32 @@ export const SHIRT_SUBCATEGORIES = {
   ]
 }
 
+export const PANTS_SUBCATEGORIES = {
+  jeans: [
+    { slug: 'balloon-fit-jeans', label: 'Balloon Fit Jeans', cover: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'baggy-fit-jeans', label: 'Baggy Fit Jeans', cover: 'https://images.unsplash.com/photo-1506629082847-11d3e392e467?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'mom-fit-jeans', label: 'Mom Fit Jeans', cover: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'regular-fit-jeans', label: 'Regular Fit Jeans', cover: 'https://images.unsplash.com/photo-1582418702059-53c19a28292c?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'cargo-fit-jeans', label: 'Cargo Fit Jeans', cover: 'https://images.unsplash.com/photo-1506629082847-11d3e392e467?w=600&auto=format&fit=crop&q=60' },
+  ],
+  pants: [
+    { slug: 'linen-pants', label: 'Linen Pants', cover: 'https://images.unsplash.com/photo-1473966143519-71f63c5d26df?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'imported-premium-pants', label: 'Imported Premium Pants', cover: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'korean-fit-pants', label: 'Korean Fit Pants', cover: 'https://images.unsplash.com/photo-1473966143519-71f63c5d26df?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'cotton-pants', label: 'Cotton Pants', cover: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'cargo-pants', label: 'Cargo Pants', cover: 'https://images.unsplash.com/photo-1506629082847-11d3e392e467?w=600&auto=format&fit=crop&q=60' },
+  ],
+  trousers: [
+    { slug: 'formal-trousers', label: 'Formal Trousers', cover: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'gurkha-trousers', label: 'Gurkha Trousers', cover: 'https://images.unsplash.com/photo-1473966143519-71f63c5d26df?w=600&auto=format&fit=crop&q=60' },
+  ],
+  shorts: [
+    { slug: 'cotton-shorts', label: 'Cotton Shorts', cover: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'denim-shorts', label: 'Denim Shorts', cover: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'performance-dryfit-shorts', label: 'Performance Dry-Fit Shorts', cover: 'https://images.unsplash.com/photo-1614008375890-cb53b6c5f8d5?w=600&auto=format&fit=crop&q=60' },
+  ]
+}
+
 const mk = (id, name, brand, category, price, original, rating, colors, sizes, collection, gender = 'unisex') => ({
   id, name, brand, category, price, original, rating, gender,
   reviews: 20 + (id * 7) % 180,
