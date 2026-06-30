@@ -8,7 +8,10 @@ import './navbar.css'
 
 const LINKS = [
   { to:'/', label:'Home' },
-  { to:'/category/shirts', label:'Men' },
+  { to:'/category/shirts', label:'Men', submenu: [
+    { to:'/category/shirts', label:'Shirts' },
+    { to:'/category/pants', label:'Pants' }
+  ]},
   { to:'/category/women-dresses', label:'Women' },
   { to:'/category/accessories', label:'Accessories' },
   { to:'/category/dresses', label:'New Arrivals' },
@@ -20,6 +23,7 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [openDropdown, setOpenDropdown] = useState(null)
   const { setOpen, count } = useCart()
   const { count: wCount } = useWishlist()
   const navigate = useNavigate()
@@ -50,7 +54,16 @@ export default function Navbar() {
         <nav className="nav__links" aria-label="Primary">
           <NavLink to="/" className={({isActive})=>'nav__link'+(isActive?' is-active':'')}>Home</NavLink>
           {LINKS.slice(1).map((l,i)=>(
-            <NavLink key={i} to={l.to} className={({isActive})=>'nav__link'+(isActive?' is-active':'')}>{l.label}</NavLink>
+            <div key={i} className="nav__link-wrapper" onMouseEnter={()=>l.submenu && setOpenDropdown(i+1)} onMouseLeave={()=>l.submenu && setOpenDropdown(null)}>
+              <NavLink to={l.to} className={({isActive})=>'nav__link'+(isActive?' is-active':''+(l.submenu ? ' nav__link--dropdown' : ''))}>{l.label}{l.submenu && <ChevronDown size={14} className="nav__chevron" />}</NavLink>
+              {l.submenu && openDropdown === i+1 && (
+                <div className="nav__dropdown">
+                  {l.submenu.map((sub, si)=>(
+                    <NavLink key={si} to={sub.to} className={({isActive})=>'nav__dropdown-link'+(isActive?' is-active':'')} onClick={()=>setOpenDropdown(null)}>{sub.label}</NavLink>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 
