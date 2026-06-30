@@ -67,21 +67,6 @@ export default function Home() {
         ))}
       </div></section>
 
-      {/* SALE */}
-      <section className="section container">
-        <Reveal><div className="section__head"><span className="eyebrow">Limited Time</span><h2>On Sale</h2></div></Reveal>
-        <div className="cat-grid">
-          {newArrivals.map((p, i) => (
-            <Reveal key={p.id} delay={i * 0.05}>
-              <Link to={`/product/${p.id}`} className="cat-card">
-                <img src={p.image || p.imageUrl} alt={p.name} loading="lazy" />
-                <span className="cat-card__label">{p.name}</span>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
       {quickView && <QuickView product={quickView} onClose={()=>setQuickView(null)} />}
     </motion.div>
   )
