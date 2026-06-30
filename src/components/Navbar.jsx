@@ -54,8 +54,8 @@ export default function Navbar() {
         <nav className="nav__links" aria-label="Primary">
           <NavLink to="/" className={({isActive})=>'nav__link'+(isActive?' is-active':'')}>Home</NavLink>
           {LINKS.slice(1).map((l,i)=>(
-            <div key={i} className="nav__link-wrapper" onMouseEnter={()=>l.submenu && setOpenDropdown(i+1)} onMouseLeave={()=>l.submenu && setOpenDropdown(null)}>
-              <NavLink to={l.to} className={({isActive})=>'nav__link'+(isActive?' is-active':''+(l.submenu ? ' nav__link--dropdown' : ''))}>{l.label}{l.submenu && <ChevronDown size={14} className="nav__chevron" />}</NavLink>
+            <div key={i} className="nav__link-wrapper">
+              <NavLink to={l.to} onClick={(e)=>{if(l.submenu) e.preventDefault(); l.submenu && setOpenDropdown(openDropdown === i+1 ? null : i+1)}} className={({isActive})=>'nav__link'+(isActive?' is-active':''+(l.submenu ? ' nav__link--dropdown' : ''))}>{l.label}{l.submenu && <ChevronDown size={14} className="nav__chevron" />}</NavLink>
               {l.submenu && openDropdown === i+1 && (
                 <div className="nav__dropdown">
                   {l.submenu.map((sub, si)=>(
