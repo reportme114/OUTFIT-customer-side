@@ -70,10 +70,13 @@ export default function Home() {
       {/* SALE */}
       <section className="section container">
         <Reveal><div className="section__head"><span className="eyebrow">Limited Time</span><h2>On Sale</h2></div></Reveal>
-        <div className="product-grid">
+        <div className="cat-grid">
           {newArrivals.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.05}>
-              <ProductCard product={p} onQuickView={setQuickView} />
+              <Link to={`/product/${p.id}`} className="cat-card">
+                <img src={p.image || p.imageUrl} alt={p.name} loading="lazy" />
+                <span className="cat-card__label">{p.name}</span>
+              </Link>
             </Reveal>
           ))}
         </div>
