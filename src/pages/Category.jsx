@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { CATEGORIES, byCategory, SHIRT_SUBCATEGORIES, PANTS_SUBCATEGORIES } from '../data/products.js'
+import { CATEGORIES, byCategory, SHIRT_SUBCATEGORIES, PANTS_SUBCATEGORIES, ACCESSORIES_SUBCATEGORIES } from '../data/products.js'
 import ProductCard from '../components/ProductCard.jsx'
 import './category.css'
 
@@ -184,7 +184,37 @@ export default function Category() {
         </div>
       )}
 
-      {products.length > 0 && slug !== 'shirts' && (
+      {slug === 'accessories' && (
+        <div className="cat-subcategories">
+          <div className="container">
+            <div className="subcategory-section">
+              <h2 className="section-title">Watches</h2>
+              <div className="subcategory-grid">
+                {ACCESSORIES_SUBCATEGORIES.watches.map(sub => (
+                  <Link key={sub.slug} to={`/products/accessories/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="subcategory-section">
+              <h2 className="section-title">Chains</h2>
+              <div className="subcategory-grid">
+                {ACCESSORIES_SUBCATEGORIES.chains.map(sub => (
+                  <Link key={sub.slug} to={`/products/accessories/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {products.length > 0 && slug !== 'shirts' && slug !== 'pants' && slug !== 'accessories' && (
         <div className="cat-products">
           <div className="container">
             <div className="products-grid">
