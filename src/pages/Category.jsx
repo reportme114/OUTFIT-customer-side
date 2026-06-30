@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { CATEGORIES } from '../data/products.js'
+import { CATEGORIES, byCategory } from '../data/products.js'
+import ProductCard from '../components/ProductCard.jsx'
 import './category.css'
 
 const MEN_SUBCATEGORIES = [
@@ -76,6 +77,7 @@ export default function Category() {
   const { slug } = useParams()
 
   const meta = CATEGORIES.find(c => c.slug === slug)
+  const products = byCategory(slug)
 
   const showMenSubcategories = slug === 'shirts'
   const showWomenSubcategories = slug === 'women-dresses'
@@ -98,6 +100,17 @@ export default function Category() {
         </div>
       </div>
 
+      {products.length > 0 && (
+        <div className="cat-products">
+          <div className="container">
+            <div className="products-grid">
+              {products.map(product => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </motion.div>
   )
 }
