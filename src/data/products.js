@@ -73,6 +73,43 @@ export const ACCESSORIES_SUBCATEGORIES = {
   ]
 }
 
+export const WOMEN_SUBCATEGORIES = {
+  formalPants: [
+    { slug: 'boot-cut-pants', label: 'Boot Cut Pants', cover: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'linen-trousers', label: 'Linen Trousers', cover: 'https://images.unsplash.com/photo-1473966143519-71f63c5d26df?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'imported-stretch-pants', label: 'Imported Stretch Pants', cover: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'cotton-pants', label: 'Cotton Pants', cover: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=600&auto=format&fit=crop&q=60' },
+  ],
+  jeans: [
+    { slug: 'wide-leg-jeans', label: 'Wide Leg Jeans', cover: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'boot-cut-jeans', label: 'Boot Cut Jeans', cover: 'https://images.unsplash.com/photo-1506629082847-11d3e392e467?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'straight-fit-jeans', label: 'Straight Fit Jeans', cover: 'https://images.unsplash.com/photo-1582418702059-53c19a28292c?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'baggy-fit-jeans', label: 'Baggy Fit Jeans', cover: 'https://images.unsplash.com/photo-1542272604-787c62d465d1?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'high-rise-jeans', label: 'High Rise Jeans', cover: 'https://images.unsplash.com/photo-1506629082847-11d3e392e467?w=600&auto=format&fit=crop&q=60' },
+  ],
+  trousers: [
+    { slug: 'casual-trousers', label: 'Casual Trousers', cover: 'https://images.unsplash.com/photo-1473966143519-71f63c5d26df?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'linen-trousers-women', label: 'Linen Trousers', cover: 'https://images.unsplash.com/photo-1473966143519-71f63c5d26df?w=600&auto=format&fit=crop&q=60' },
+  ],
+  tops: [
+    { slug: 'striped-shirts', label: 'Striped Shirts', cover: 'https://images.unsplash.com/photo-1596631066410-fbf667266251?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'crop-tops', label: 'Crop Tops', cover: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'oversized-tshirts', label: 'Oversized T-Shirts', cover: 'https://images.unsplash.com/photo-1617638924702-92d37f439220?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'formal-shirts', label: 'Formal Shirts', cover: 'https://images.unsplash.com/photo-1603251578711-07f1707ce338?w=600&auto=format&fit=crop&q=60' },
+  ],
+  kurti: [
+    { slug: 'plain-kurti', label: 'Plain Kurti', cover: 'https://images.unsplash.com/photo-1604436607823-d721dfe2df46?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'designer-kurti', label: 'Designer Kurti', cover: 'https://images.unsplash.com/photo-1604436607823-d721dfe2df46?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'embroidered-kurti', label: 'Embroidered Kurti', cover: 'https://images.unsplash.com/photo-1604436607823-d721dfe2df46?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'flared-kurti', label: 'Flared Kurti', cover: 'https://images.unsplash.com/photo-1604436607823-d721dfe2df46?w=600&auto=format&fit=crop&q=60' },
+  ],
+  kurtaSets: [
+    { slug: 'embroidered-kurta-sets', label: 'Embroidered Kurta Sets', cover: 'https://images.unsplash.com/photo-1604436607823-d721dfe2df46?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'palazzo-sets', label: 'Palazzo Sets', cover: 'https://images.unsplash.com/photo-1604436607823-d721dfe2df46?w=600&auto=format&fit=crop&q=60' },
+    { slug: 'georgette-sets', label: 'Georgette Sets', cover: 'https://images.unsplash.com/photo-1604436607823-d721dfe2df46?w=600&auto=format&fit=crop&q=60' },
+  ]
+}
+
 const mk = (id, name, brand, category, price, original, rating, colors, sizes, collection, gender = 'unisex') => ({
   id, name, brand, category, price, original, rating, gender,
   reviews: 20 + (id * 7) % 180,

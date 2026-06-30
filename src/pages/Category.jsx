@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { CATEGORIES, byCategory, SHIRT_SUBCATEGORIES, PANTS_SUBCATEGORIES, ACCESSORIES_SUBCATEGORIES } from '../data/products.js'
+import { CATEGORIES, byCategory, SHIRT_SUBCATEGORIES, PANTS_SUBCATEGORIES, ACCESSORIES_SUBCATEGORIES, WOMEN_SUBCATEGORIES } from '../data/products.js'
 import ProductCard from '../components/ProductCard.jsx'
 import './category.css'
 
@@ -141,7 +141,85 @@ export default function Category() {
         </div>
       )}
 
-      {products.length > 0 && slug !== 'shirts' && slug !== 'pants' && slug !== 'accessories' && (
+      {slug === 'women-dresses' && (
+        <div className="cat-subcategories">
+          <div className="container">
+            <div className="subcategory-section">
+              <h2 className="section-title">👖 Formal Pants Collection</h2>
+              <div className="subcategory-grid">
+                {WOMEN_SUBCATEGORIES.formalPants.map(sub => (
+                  <Link key={sub.slug} to={`/products/women-dresses/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="subcategory-section">
+              <h2 className="section-title">👖 Jeans Collection</h2>
+              <div className="subcategory-grid">
+                {WOMEN_SUBCATEGORIES.jeans.map(sub => (
+                  <Link key={sub.slug} to={`/products/women-dresses/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="subcategory-section">
+              <h2 className="section-title">👔 Trousers Collection</h2>
+              <div className="subcategory-grid">
+                {WOMEN_SUBCATEGORIES.trousers.map(sub => (
+                  <Link key={sub.slug} to={`/products/women-dresses/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="subcategory-section">
+              <h2 className="section-title">🩳 Tops Collection</h2>
+              <div className="subcategory-grid">
+                {WOMEN_SUBCATEGORIES.tops.map(sub => (
+                  <Link key={sub.slug} to={`/products/women-dresses/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="subcategory-section">
+              <h2 className="section-title">👗 Kurti Collection</h2>
+              <div className="subcategory-grid">
+                {WOMEN_SUBCATEGORIES.kurti.map(sub => (
+                  <Link key={sub.slug} to={`/products/women-dresses/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="subcategory-section">
+              <h2 className="section-title">🥻 Kurta Sets Collection</h2>
+              <div className="subcategory-grid">
+                {WOMEN_SUBCATEGORIES.kurtaSets.map(sub => (
+                  <Link key={sub.slug} to={`/products/women-dresses/${sub.slug}`} className="subcategory-card">
+                    <img src={sub.cover} alt={sub.label} className="subcategory-image" />
+                    <h3 className="subcategory-label">{sub.label}</h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {products.length > 0 && slug !== 'shirts' && slug !== 'pants' && slug !== 'accessories' && slug !== 'women-dresses' && (
         <div className="cat-products">
           <div className="container">
             <div className="products-grid">
